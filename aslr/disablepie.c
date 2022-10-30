@@ -1,4 +1,4 @@
-// 关闭SIP和移除签名后在 M1 上移除 PIE flag 无法运行：
+// 在 M1 上移除 PIE flag 无法运行，已经关闭SIP和移除签名：
 //  错误日志：[/usr/libexec/taskgated] no signature for pid=2333 (cannot make code: UNIX[No such process])
 
 #include <stdio.h>

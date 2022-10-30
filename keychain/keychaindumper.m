@@ -8,27 +8,27 @@ int main(int argc, char **argv)
         // 构建查询字典
         // dictionaryWithObjectsAndKeys用法：https://developer.apple.com/documentation/foundation/nsdictionary/1574181-dictionarywithobjectsandkeys
         NSMutableDictionary *query = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-                                    (__bridge id)kCFBooleanTrue, // value
-                                    (__bridge id)kSecReturnAttributes, // key
-                                    (__bridge id)kSecMatchLimitAll, 
-                                    (__bridge id)kSecMatchLimit,
+                                    (id)kCFBooleanTrue, // value
+                                    (id)kSecReturnAttributes, // key
+                                    (id)kSecMatchLimitAll, 
+                                    (id)kSecMatchLimit,
                                     nil];
         // 包含所有类 keychain 的数组
         // arrayWithObjects用法：https://developer.apple.com/documentation/foundation/nsarray/1460145-arraywithobjects
         NSArray *secItemClasses = [NSArray arrayWithObjects:
-                                    (__bridge id)kSecClassGenericPassword,
-                                    (__bridge id)kSecClassInternetPassword,
-                                    (__bridge id)kSecClassCertificate,
-                                    (__bridge id)kSecClassKey,
-                                    (__bridge id)kSecClassIdentity,
+                                    (id)kSecClassGenericPassword,
+                                    (id)kSecClassInternetPassword,
+                                    (id)kSecClassCertificate,
+                                    (id)kSecClassKey,
+                                    (id)kSecClassIdentity,
                                     nil];
 
         for (id secItemClass in secItemClasses) {
-            [query setObject:secItemClass forKey:(__bridge id)kSecClass];
+            [query setObject:secItemClass forKey:(id)kSecClass];
 
             CFTypeRef result = NULL;
-            SecItemCopyMatching((__bridge CFDictionaryRef)query, &result);
-            NSLog(@"%@", (__bridge id)result);
+            SecItemCopyMatching((CFDictionaryRef)query, &result);
+            NSLog(@"%@", (id)result);
             if (result != NULL)
                 CFRelease(result);
         }
