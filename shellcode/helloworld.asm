@@ -1,6 +1,6 @@
 ; helloworld.asm on macOS
 ; nasm -f macho64 helloworld.asm
-; ld -macosx_version_min 10.14 -L /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib -lSystem -e start -o helloworld helloworld.o
+; ld -macosx_version_min 10.14 -L /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib -lSystem -o helloworld helloworld.o
 
 ;; 必须在寄存器 %rax 中传递系统调用的编号：
 ; rdi - used to pass 1st argument to functions
