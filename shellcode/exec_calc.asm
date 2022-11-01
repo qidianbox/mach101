@@ -28,18 +28,18 @@ _main:
     ; open /System/Applications/Calculator.app
     ; open /Sy stem/App lication s/Calcul ator.app
     push    rdx
-    mov rcx, 'ator.app'
-    push rcx
-    mov rcx, 's/Calcul'
-    push rcx
-    mov rcx, 'lication'
-    push rcx
-    mov rcx, 'stem/App'
-    push rcx
-    mov rcx, 'open /Sy'
-    push rcx
-    push rsp
-    pop rcx
+    mov     rcx, 'ator.app'
+    push    rcx
+    mov     rcx, 's/Calcul'
+    push    rcx
+    mov     rcx, 'lication'
+    push    rcx
+    mov     rcx, 'stem/App'
+    push    rcx
+    mov     rcx, 'open /Sy'
+    push    rcx
+    push    rsp
+    pop     rcx
 
     push    rdx
     push    rcx
