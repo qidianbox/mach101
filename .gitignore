@@ -70,3 +70,4 @@ iOSInjectionProject/
 # dev
 .DS_Store
 chromx/
+*.o
