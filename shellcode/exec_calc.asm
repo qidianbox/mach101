@@ -1,12 +1,11 @@
-; nasm -f macho64 execute_command.asm
-; ld -macosx_version_min 10.14 -L /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib -lSystem -o execute_command execute_command.o 
+; nasm -f macho64 exec_calc.asm
+; ld -macosx_version_min 10.14 -L /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib -lSystem -o exec_calc exec_calc.o 
 
 BITS        64
 global      _main
 
 section     .text
 _main:
-    ; execve("//bin/sh", ['-c', 'xxx'], 0)
     xor     rax, rax
     mov     al, 0x2         ; rax=0x2
     ror     rax, 0x28       ; 左移 rax=0x2000000
