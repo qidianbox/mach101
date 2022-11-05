@@ -1,4 +1,4 @@
-// clang -arch x86_64  simple_loader.c -o simple_loader
+// clang -arch x86_64 simple_loader.c -o simple_loader
 #include <stdio.h>
 #include <sys/mman.h>
 #include <string.h>
