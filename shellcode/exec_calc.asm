@@ -1,5 +1,5 @@
 ; nasm -f macho64 exec_calc.asm
-; ld -macosx_version_min 10.14 -L /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib -lSystem -o exec_calc exec_calc.o 
+; ld -macosx_version_min 10.14 -L /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib -lSystem -o exec_calc exec_calc.o
 
 BITS        64
 global      _main
