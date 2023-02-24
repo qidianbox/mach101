@@ -6,7 +6,6 @@ int main()
     char *args[3];
     // clang 我没有找到哪个编译参数 不要处理 string 或 char* 把数据添加 Section __cstring 下
     // -fno-constant-cfstrings -fno-data-sections -fno-stack-size-section 编译参数均没啥用
-    // s[0] = "/bin/sh";
     char s[8];
     s[0] = '/';
     s[1] = 'b';
