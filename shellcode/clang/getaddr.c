@@ -3,5 +3,5 @@
 #include <stdio.h>
 int main(void)
 {
-    printf("0x%lx \n", execv);
+    printf("%p \n", execv);
 }
