@@ -3,5 +3,7 @@
 #include <unistd.h>
 int main(void)
 {
-    execv("/bin/bash", 0);
+    char *cmd[] = {"/bin/zsh", "-c", "open /System/Applications/Calculator.app", NULL};
+    execv(cmd[0], cmd);
+    return 0;
 }
