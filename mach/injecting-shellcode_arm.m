@@ -1,7 +1,7 @@
 #import <AppKit/AppKit.h>
 #import <Foundation/Foundation.h>
-#include <mach/mach_vm.h>
-#include <sys/sysctl.h>
+#import <mach/mach_vm.h>
+#import <sys/sysctl.h>
 
 #define STACK_SIZE 0x1000
 #define CODE_SIZE 512
@@ -10,8 +10,15 @@
 char shellcode[] = "\x00";
 
 int main(int argc, const char *argv[]) {
-  pid_t pid = 49175;
+  pid_t pid = 0;
   task_t remoteTask;
+
+  if (argc > 1) {
+    pid = atoi(argv[1]);
+  } else {
+    printf("Usage: %s <pid>\n", argv[0]);
+    exit(-1);
+  }
 
   kern_return_t kr = task_for_pid(mach_task_self(), pid, &remoteTask);
   if (kr != KERN_SUCCESS) {
